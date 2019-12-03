@@ -54,5 +54,9 @@ public class CharaController : MonoBehaviour
         {
             anim.SetTrigger("isFootballKicking");
         }
+        else if (Input.GetKeyDown("q"))
+        {
+            anim.SetTrigger("isDancing");
+        }
     }
 }
