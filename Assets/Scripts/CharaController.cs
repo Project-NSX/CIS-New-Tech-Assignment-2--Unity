@@ -62,5 +62,9 @@ public class CharaController : MonoBehaviour
         {
             anim.SetTrigger("isThrowing");
         }
+        else if (Input.GetKeyDown("1"))
+        {
+            anim.SetTrigger("isSlipping");
+        }
     }
 }
