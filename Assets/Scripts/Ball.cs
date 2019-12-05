@@ -22,7 +22,7 @@ public class Ball : MonoBehaviour
         if (other.tag == "PlayerColliders")
         {
             // how much the character should be knocked back
-            var magnitude = 1500;
+            var magnitude = 800;
             // calculate force vector
             var force = transform.forward;
             // normalize force vector to get direction only and trim magnitude

@@ -58,5 +58,9 @@ public class CharaController : MonoBehaviour
         {
             anim.SetTrigger("isDancing");
         }
+        else if (Input.GetKeyDown("g"))
+        {
+            anim.SetTrigger("isThrowing");
+        }
     }
 }
