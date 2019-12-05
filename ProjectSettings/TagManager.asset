@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RightLeg
   - PlayerColliders
+  - Ball
   layers:
   - Default
   - TransparentFX
