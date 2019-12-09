@@ -43,6 +43,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grenade: {fileID: 2587020314659585793}
+  timer: 3
+  explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+    type: 3}
 --- !u!1001 &2587020314659972481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50,10 +53,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 100000, guid: bc47d6d03a2cd0b4ab4297dfd2edfe5f, type: 3}
-      propertyPath: m_Name
-      value: WPN_MK2Grenade
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bc47d6d03a2cd0b4ab4297dfd2edfe5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -109,6 +108,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: bc47d6d03a2cd0b4ab4297dfd2edfe5f, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bc47d6d03a2cd0b4ab4297dfd2edfe5f, type: 3}
+      propertyPath: m_Name
+      value: WPN_MK2Grenade
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc47d6d03a2cd0b4ab4297dfd2edfe5f, type: 3}

@@ -51,7 +51,7 @@ public class EnemyAI : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        anim.SetTrigger("isDead");
+
         if (other.tag == "RightLeg" && this.tag == "Enemy" || other.tag == "LeftHand" && this.tag == "Enemy")
         {
             foreach (var col in AllColliders)
