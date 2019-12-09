@@ -19,7 +19,7 @@ public class Ball : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "PlayerColliders")
+        if (other.tag == "RightLeg")
         {
             // how much the character should be knocked back
             var magnitude = 800;

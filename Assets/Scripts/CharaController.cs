@@ -8,6 +8,10 @@ public class CharaController : MonoBehaviour
     [SerializeField] float rotationSpeed = 100.0f;
     Animator anim;
 
+    public GameObject grenadeInHand;
+    public Transform rightHandPos;
+    public GameObject grenadeToThrow;
+
     private void Start()
     {
         anim = this.GetComponent<Animator>();
@@ -66,5 +70,19 @@ public class CharaController : MonoBehaviour
         {
             anim.SetTrigger("isSlipping");
         }
+    }
+
+
+    void PickupGrenade()
+    {
+        grenadeInHand.SetActive(true);   
+    }
+
+    void DisableGrenade()
+    {
+        grenadeInHand.SetActive(false);
+
+        Instantiate(grenadeToThrow, rightHandPos.position, rightHandPos.rotation).GetComponent<Rigidbody>().AddForce(rightHandPos.forward * 280);
+
     }
 }

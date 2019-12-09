@@ -9,7 +9,7 @@ public class FootballKick : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        leg = GameObject.FindGameObjectsWithTag("PlayerColliders");
+        leg = GameObject.FindGameObjectsWithTag("RightLeg");
 
         foreach (GameObject i in leg)
         {
