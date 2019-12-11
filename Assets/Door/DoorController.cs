@@ -12,6 +12,7 @@ public class DoorController : MonoBehaviour
         if(other.tag == "Player")
         {
             anim.SetBool("isOpening", true);
+            FindObjectOfType<AudioManager>().Play("Door");
         }
     }
 
@@ -20,6 +21,7 @@ public class DoorController : MonoBehaviour
         if (other.tag == "Player")
         {
             anim.SetBool("isOpening", false);
+            FindObjectOfType<AudioManager>().Play("Door");
         }
     }
     // Start is called before the first frame update

@@ -29,7 +29,10 @@ public class Fireworks : MonoBehaviour
 
         if (other.tag == "Ball")
         {
-            
+            FindObjectOfType<AudioManager>().Play("Fireworks1");
+            FindObjectOfType<AudioManager>().Play("Fireworks2");
+            FindObjectOfType<AudioManager>().Play("Fireworks3");
+            FindObjectOfType<AudioManager>().Play("Fireworks4");
             Debug.Log("Fireworks!!!");
             fireworks1.GetComponent<ParticleSystem>().Play();
             fireworks2.GetComponent<ParticleSystem>().Play();

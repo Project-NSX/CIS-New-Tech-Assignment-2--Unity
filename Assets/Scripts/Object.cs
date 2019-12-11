@@ -19,10 +19,11 @@ public class Object : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "PlayerColliders")
-        {
+        if (other.tag == "RightLeg" || other.tag == "LeftHand")
+     {
+            FindObjectOfType<AudioManager>().Play("ball");
             // how much the character should be knocked back
-            var magnitude = 1000;
+            var magnitude = 500;
             // calculate force vector
             var force = transform.position - other.transform.position;
             // normalize force vector to get direction only and trim magnitude

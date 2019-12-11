@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharaController : MonoBehaviour
@@ -11,6 +9,15 @@ public class CharaController : MonoBehaviour
     public GameObject grenadeInHand;
     public Transform rightHandPos;
     public GameObject grenadeToThrow;
+
+
+
+    public GameObject fireworks2;
+    public GameObject fireworks3;
+    public GameObject fireworks4;
+    public GameObject fireworks5;
+    public GameObject fireworks6;
+
 
     private void Start()
     {
@@ -27,6 +34,7 @@ public class CharaController : MonoBehaviour
 
 
         transform.Rotate(0, rotation, 0);
+
 
         if (translation != 0)
         {
@@ -58,17 +66,38 @@ public class CharaController : MonoBehaviour
         {
             anim.SetTrigger("isFootballKicking");
         }
-        else if (Input.GetKeyDown("q"))
+        else if (Input.GetKeyDown("2"))
         {
-            anim.SetTrigger("isDancing");
+            anim.SetTrigger("isDancing1");
+            RadioFireworks();
         }
         else if (Input.GetKeyDown("g"))
         {
             anim.SetTrigger("isThrowing");
         }
+        else if (Input.GetKeyDown("h"))
+        {
+            anim.SetTrigger("isThrowingNoDive");
+        }
         else if (Input.GetKeyDown("1"))
         {
-            anim.SetTrigger("isSlipping");
+            anim.SetTrigger("isTurningOnRadio");
+        }
+        else if (Input.GetKeyDown("3"))
+        {
+            anim.SetTrigger("isDancing2");
+        }
+        else if (Input.GetKeyDown("4"))
+        {
+            anim.SetTrigger("isRallying");
+        }
+        else if (Input.GetKeyDown("5"))
+        {
+            anim.SetTrigger("isCheering");
+        }
+        else if (Input.GetKeyDown("q"))
+        {
+            anim.SetTrigger("isCheering1");
         }
     }
 
@@ -83,6 +112,22 @@ public class CharaController : MonoBehaviour
         grenadeInHand.SetActive(false);
 
         Instantiate(grenadeToThrow, rightHandPos.position, rightHandPos.rotation).GetComponent<Rigidbody>().AddForce(rightHandPos.forward * 280);
+
+    }
+
+    void RadioFireworks()
+    {
+
+        FindObjectOfType<AudioManager>().Play("Fireworks2");
+        FindObjectOfType<AudioManager>().Play("Fireworks3");
+        FindObjectOfType<AudioManager>().Play("Fireworks4");
+
+
+        fireworks2.GetComponent<ParticleSystem>().Play();
+        fireworks3.GetComponent<ParticleSystem>().Play();
+        fireworks4.GetComponent<ParticleSystem>().Play();
+        fireworks5.GetComponent<ParticleSystem>().Play();
+        fireworks6.GetComponent<ParticleSystem>().Play();
 
     }
 }

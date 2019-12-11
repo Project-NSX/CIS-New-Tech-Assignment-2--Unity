@@ -21,8 +21,9 @@ public class Ball : MonoBehaviour
 
         if (other.tag == "RightLeg")
         {
+            FindObjectOfType<AudioManager>().Play("ball");
             // how much the character should be knocked back
-            var magnitude = 800;
+            var magnitude = 1000;
             // calculate force vector
             var force = transform.forward;
             // normalize force vector to get direction only and trim magnitude
