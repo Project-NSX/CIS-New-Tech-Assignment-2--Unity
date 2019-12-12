@@ -13,10 +13,12 @@ public class Fireworks : MonoBehaviour
     public GameObject fireworks7;
     public GameObject fireworks8;
 
+    bool setOff;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        setOff = false; 
     }
 
     // Update is called once per frame
@@ -27,23 +29,32 @@ public class Fireworks : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        if (other.tag == "Ball")
-        {
-            FindObjectOfType<AudioManager>().Play("Fireworks1");
-            FindObjectOfType<AudioManager>().Play("Fireworks2");
-            FindObjectOfType<AudioManager>().Play("Fireworks3");
-            FindObjectOfType<AudioManager>().Play("Fireworks4");
-            Debug.Log("Fireworks!!!");
-            fireworks1.GetComponent<ParticleSystem>().Play();
-            fireworks2.GetComponent<ParticleSystem>().Play();
-            fireworks3.GetComponent<ParticleSystem>().Play();
-            fireworks4.GetComponent<ParticleSystem>().Play();
-            fireworks5.GetComponent<ParticleSystem>().Play();
-            fireworks6.GetComponent<ParticleSystem>().Play();
-            fireworks7.GetComponent<ParticleSystem>().Play();
-            fireworks8.GetComponent<ParticleSystem>().Play();
-            
-        }
+            if (other.tag == "Ball")
+            {
+
+                if (setOff == false)
+                {
+                    FindObjectOfType<AudioManager>().Play("Fireworks1");
+                    FindObjectOfType<AudioManager>().Play("Fireworks2");
+                    FindObjectOfType<AudioManager>().Play("Fireworks3");
+                    FindObjectOfType<AudioManager>().Play("Fireworks4");
+                    Debug.Log("Fireworks!!!");
+                    fireworks1.GetComponent<ParticleSystem>().Play();
+                    fireworks2.GetComponent<ParticleSystem>().Play();
+                    fireworks3.GetComponent<ParticleSystem>().Play();
+                    fireworks4.GetComponent<ParticleSystem>().Play();
+                    fireworks5.GetComponent<ParticleSystem>().Play();
+                    fireworks6.GetComponent<ParticleSystem>().Play();
+                    fireworks7.GetComponent<ParticleSystem>().Play();
+                    fireworks8.GetComponent<ParticleSystem>().Play();
+                    setOff = true;
+
+                }
+
+            }
+
+        
+
 
     }
 }
